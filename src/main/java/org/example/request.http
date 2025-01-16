@@ -1,0 +1,91 @@
+# Warehouses Management System Endpoints
+
+### Warehouses Endpoints
+
+# Create Warehouse
+PUT http://localhost:8090/api/warehouses
+Content-Type: application/json
+
+{
+  "name": "w3",
+  "location": "la"
+}
+
+###
+
+# Read All Warehouses
+GET http://localhost:8090/api/warehouses
+
+###
+
+# Read Warehouse by name
+GET http://localhost:8090/api/warehouses/w2
+
+###
+
+# Read All Products in a Warehouse
+GET http://localhost:8090/api/warehouses/w1/products
+
+###
+
+# Update Warehouse
+PATCH http://localhost:8090/api/warehouses/w3
+Content-Type: application/json
+
+{
+  "name": "w4",
+  "location": "or"
+}
+
+###
+
+# Delete Warehouse
+DELETE http://localhost:8090/api/warehouses/w4
+
+### Product Endpoints
+
+# Create Product
+PUT http://localhost:8090/api/products
+Content-Type: application/json
+
+{
+    "name": "komputer_mad_dog_endorfy500argb-i08dr32v2_i5-14400f_32gb_ram_1tb_ssd_geforce_rtx4060_dlss_3_wi-fi",
+    "price": 4648.00,
+    "quantity": 69,
+    "category": "electronics",
+    "warehouseName": "w1"
+}
+
+###
+
+# Get All Products
+GET http://localhost:8090/api/products
+
+###
+
+# Get Product by name
+GET http://localhost:8090/api/products/ipad_air
+
+###
+
+# Update Product
+PATCH http://localhost:8090/api/products/komputer_mad_dog_endorfy500argb-i08dr32v2_i5-14400f_32gb_ram_1tb_ssd_geforce_rtx4060_dlss_3_wi-fi
+Content-Type: application/json
+
+{
+    "name": "pc_mad_dog_endorfy",
+    "price": 4200,
+    "quantity": 69,
+    "category": "electronics",
+    "warehouseName": "w2"
+}
+
+###
+
+# Get the product after update
+GET http://localhost:8090/api/products/pc_mad_dog_endorfy
+
+###
+
+# Delete Product
+DELETE http://localhost:8090/api/products/pc_mad_dog_endorfy
